@@ -1,7 +1,7 @@
 # SDVXSHEET
 SDVX simulator in javascript
 
-Two main parts: a parser (that parses a KSH file), and a renderer (that actually renders the parsed data using D3.js and serves very basic "gameplay". Gameplay ticks are also completely off. Yes, I know WebGL would have been much better. I mostly used this as a quick way to practice specific sections of charts. 
+Two main parts: a parser (that parses a KSH file), and a renderer (that actually renders the parsed data using D3.js and serves very basic "gameplay". Gameplay ticks are also completely off. Yes, I know WebGL would have been much better. I mostly used this as a quick way to practice specific sections of charts. I usually run it by running `python -m SimpleHTTPServer`.
 
 Does not work with songs that have BPM changes. Also, newer KSH files appear to be out of sync with audio.
 
