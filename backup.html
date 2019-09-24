@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<!-- BACKUP COPY -->
+<html lang="en">
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="./js/parser.js"></script>
+<script src="./js/render.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <title>SDVX SHEET</title>
+<!--     <link rel="stylesheet" href="./css/style.css"> -->
+</head>
+<body>
+	<div class="container" style="z-index:1;max-width:100%;max-height:100%">
+		<svg class="viewbox" style="position:fixed;transform:translateY(-220px) scale(0.6, 0.4) perspective(400px) rotateX(60deg)" width="100%" height="100%" viewbox="0 0 1000 1000" preserveAspectRatio="xMidYMid">
+
+			<g class="divider_group">
+				<rect class="divider" id="divider0" x="375" y="100" width="50" height="800" style="fill:#418EFF;"/>
+				<rect class="divider" id="divider1" x="425" y="100" width="150" height="800" style="fill:#626E70;"/>
+				<rect class="divider" id="divider2" x="575" y="100" width="50" height="800" style="fill:#8F2F63;"/>
+			</g>
+
+			<g class="lane_group">
+				<rect class="lane" id="lane0" x="350" y="100" width="49" height="800" style="fill:#000323;"/>
+				<rect class="lane" id="lane1" x="400" y="100" width="49" height="800" style="fill:#030405;"/>
+				<rect class="lane" id="lane2" x="450" y="100" width="49" height="800" style="fill:#030405;"/>
+				<rect class="lane" id="lane3" x="500" y="100" width="49" height="800" style="fill:#030405;"/>
+				<rect class="lane" id="lane4" x="550" y="100" width="49" height="800" style="fill:#030405;"/>
+				<rect class="lane" id="lane5" x="600" y="100" width="49" height="800" style="fill:#18000A;"/>
+			</g>
+
+			<g class="notes"><!-- d3 --></g>
+
+			<g class="judgement_group">
+				<rect class="judgement" id="judgement0" x="350" y="900" width="299" height="10" style="fill:#AC6EB9;"/>
+			</g>
+		</svg>
+	</div>
+	<input style="position:absolute;z-index=2" type='file' accept='.ksh' onchange='parser(event)'></input>
+		
+	
+</body>
+</html>
+
+<!DOCTYPE HTML>
+<!-- BACKUP COPY -->
+<html lang="en">
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="./js/parser.js"></script>
+<script src="./js/render.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <title>SDVX SHEET</title>
+<!--     <link rel="stylesheet" href="./css/style.css"> -->
+</head>
+<body>
+	<div class="container" style="z-index:1;max-width:100%;max-height:100%">
+		<svg class="viewbox" style="position:fixed;transform:translateY(15%)scale(0.35, 0.25)perspective(840px)rotateX(70deg);transform-origin:50% 10%;" width="100%" height="100%" viewbox="0 0 1000 1000" preserveAspectRatio="xMidYMid">
+			<svg>
+				<g class="divider_group">
+					<rect class="divider" id="divider0" x="375" y="100" width="50" height="800" style="fill:#418EFF;"/>
+					<rect class="divider" id="divider1" x="425" y="100" width="150" height="800" style="fill:#626E70;"/>
+					<rect class="divider" id="divider2" x="575" y="100" width="50" height="800" style="fill:#8F2F63;"/>
+				</g>
+
+				<g class="lane_group">
+					<rect class="lane" id="lane0" x="350" y="100" width="49" height="800" style="fill:#000323;"/>
+					<rect class="lane" id="lane1" x="400" y="100" width="49" height="800" style="fill:#030405;"/>
+					<rect class="lane" id="lane2" x="450" y="100" width="49" height="800" style="fill:#030405;"/>
+					<rect class="lane" id="lane3" x="500" y="100" width="49" height="800" style="fill:#030405;"/>
+					<rect class="lane" id="lane4" x="550" y="100" width="49" height="800" style="fill:#030405;"/>
+					<rect class="lane" id="lane5" x="600" y="100" width="49" height="800" style="fill:#18000A;"/>
+				</g>
+
+				<g class="notes"><!-- d3 --></g>
+
+				<g class="judgement_group">
+					<rect class="judgement" id="judgement0" x="350" y="900" width="299" height="10" style="fill:#AC6EB9;"/>
+				</g>
+			</svg>
+				
+
+				
+		</svg>
+	</div>
+	<input style="position:absolute;z-index=2" type='file' accept='.ksh' onchange='parser(event)'></input>
+		
+	
+</body>
+</html>

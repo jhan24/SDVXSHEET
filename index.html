@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<!-- BACKUP COPY -->
+<html lang="en">
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="./js/parser.js"></script>
+<script src="./js/render.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/style.css">
+<head>
+    <meta charset="UTF-8">
+    <title>SDVX SHEET</title>
+<!--     <link rel="stylesheet" href="./css/style.css"> -->
+</head>
+<body background="imgs/sky.jpg" style="background-size:cover">
+
+	<div style="padding:2px">
+		<input type='file' accept='.ksh' onchange='parser(event)'></input>
+		<input  id="audioFileChooser" type="file" onchange="storeMusic(this.files);">
+		<button id="playbutton" class="button" type="button" onclick="toggleTransition()">Play/Pause</button>
+		<input style="width:30%" type="range" min="0" max="200" value="0" class="slider" id="beatRange" onchange="updatePosition(this.value)" oninput="updatePosition(this.value)">
+		<input style="width:10%" type="range" min="5" max="50" value="20" class="slider" id="spacingRange" onchange="updateSpacing(this.value)" oninput="updateSpacing(this.value)">
+		<audio id="sound" style="display:none"></audio>
+	</div>
+
+	<div class="container" style="z-index:1;max-width:100%;max-height:100%">
+		<svg class="viewbox" style="display:block;margin:auto;transform:translateY(-100px) scale(0.6, 0.4) perspective(400px) rotateX(60deg);transition:0.5s all" width="450" height="750" viewbox="150 0 700 910" preserveAspectRatio="none">
+			<defs>
+				<clipPath id="track-clip-path">
+					<rect x="0" y="100" width="1000" height="800" />
+				</clipPath>
+				<linearGradient id="hitGradient" x1="0" x2="0" y1="1" y2="0">
+					<stop offset="0%" stop-color="#ffe732"/>
+					<stop offset="80%" stop-color="#030405"/>
+				</linearGradient>
+				<linearGradient id="earlyGradient" x1="0" x2="0" y1="1" y2="0">
+					<stop offset="0%" stop-color="#9030ff"/>
+					<stop offset="80%" stop-color="#030405"/>
+				</linearGradient>
+				<linearGradient id="lateGradient" x1="0" x2="0" y1="1" y2="0">
+					<stop offset="0%" stop-color="#ff3078"/>
+					<stop offset="80%" stop-color="#030405"/>
+				</linearGradient>
+				<linearGradient id="noneGradient" x1="0" x2="0" y1="1" y2="0">
+					<stop offset="0%" stop-color="#ffffff"/>
+					<stop offset="80%" stop-color="#030405"/>
+				</linearGradient>
+			</defs>
+			<g class="divider_group">
+				<rect class="divider" id="divider0" x="375" y="100" width="50" height="800" style="fill:#418EFF;"/>
+				<rect class="divider" id="divider1" x="425" y="100" width="150" height="800" style="fill:#626E70;"/>
+				<rect class="divider" id="divider2" x="575" y="100" width="50" height="800" style="fill:#8F2F63;"/>
+			</g>
+
+			<g class="lane_group">
+				<rect class="lane" id="lane0" x="350" y="100" width="49" height="800" style="fill:#000323;"/>
+				<rect class="lane" id="lane1" x="400" y="100" width="49" height="800" style="fill:#030405;"/>
+				<rect class="lane" id="lane2" x="450" y="100" width="49" height="800" style="fill:#030405;"/>
+				<rect class="lane" id="lane3" x="500" y="100" width="49" height="800" style="fill:#030405;"/>
+				<rect class="lane" id="lane4" x="550" y="100" width="49" height="800" style="fill:#030405;"/>
+				<rect class="lane" id="lane5" x="600" y="100" width="49" height="800" style="fill:#18000A;"/>
+			</g>
+
+			<g class="feedback_group">
+				<rect opacity=0 class="feedback0" id="feedback0" x="400" y="800" width="49" height="100" fill="url(#hitGradient)"/>
+				<rect opacity=0 class="feedback1" id="feedback1" x="450" y="800" width="49" height="100" fill="url(#hitGradient)"/>
+				<rect opacity=0 class="feedback2" id="feedback2" x="500" y="800" width="49" height="100" fill="url(#hitGradient)"/>
+				<rect opacity=0 class="feedback3" id="feedback3" x="550" y="800" width="49" height="100" fill="url(#hitGradient)"/>
+				<rect opacity=0 class="feedback4" id="feedback4" x="400" y="800" width="99" height="100" fill="url(#hitGradient)"/>
+				<rect opacity=0 class="feedback5" id="feedback5" x="500" y="800" width="99" height="100" fill="url(#hitGradient)"/>
+			</g>
+
+			<g class="judgement_group">
+				<rect class="judgement" id="judgement0" x="350" y="900" width="299" height="10" style="fill:#AC6EB9;"/>
+			</g>
+
+			<g class="parent_notes" style="clip-path:url(#track-clip-path);"></g>
+
+			<text opacity=0.8 class="comboText" x="500" y="1100" font-size="20" fill="white" text-anchor="middle" transform="scale(1, 0.75)">0</text>
+			<rect x="350" y="900" width="49" height="9" opacity=0.75 class="pointer pointer6" fill="#0ADCFF" stroke="white"/>
+			<rect x="600" y="900" width="49" height="9" opacity=0.75 class="pointer pointer7" fill="#EB51CE" stroke="white"/>
+		</svg>
+	</div>
+
+</body>
+</html>
